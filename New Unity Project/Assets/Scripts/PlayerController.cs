@@ -6,7 +6,8 @@ public class PlayerController : MonoBehaviour
 {
 
     public List<UnityEngine.UI.Button> WeaponButtons;
-
+    public List<UnityEngine.UI.Button> ArmorButtons;
+    public List<UnityEngine.UI.Button> CharacterButtons;
     public SpriteRenderer WeaponRenderer;
     public SpriteRenderer ArmorRenderer;
     // Start is called before the first frame update
@@ -23,8 +24,14 @@ public class PlayerController : MonoBehaviour
     
     public void SetRandomWeapon()
     {
-        int randomNumber = Random.Range(0, 6);
+        int randomNumber = Random.Range(0, 7);
         this.WeaponButtons[randomNumber].onClick.Invoke();
+    }
+    
+    public void SetRandomArmor()
+    {
+        int randomNumber = Random.Range(0, 6);
+        this.ArmorButtons[randomNumber].onClick.Invoke();
     }
 
     void Start()
